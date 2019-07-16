@@ -1,0 +1,92 @@
+﻿ body {
+    background-color: palegreen;
+    text-align:center;
+}
+
+#content {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Calibri;
+    background-color: palegreen;
+    padding-top: 25px;
+}
+
+    #content h1 {
+        color: #fff;
+    }
+
+    #content a {
+        margin: 0 auto;
+        text-decoration: none;
+        width: 350px;
+        height: 25px;
+        background-color: #1e262c;
+        display: block;
+        color: #fff;
+        border: 2px solid #fafafa;
+        border-radius: 5px;
+        padding-top: 5px;
+    }
+.errspan {
+    float: right;
+    vertical-align:central;
+    margin-right: 6px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+    color: #1e262c;
+}
+.top-gradient {
+    background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwP/2wBDAQEBAQEBAQEBAQECAgECAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwP/wgARCAABAAQDAREAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAAAv/EABQBAQAAAAAAAAAAAAAAAAAAAAb/2gAMAwEAAhADEAAAAQBWf//EABQQAQAAAAAAAAAAAAAAAAAAAEb/2gAIAQEAAQUCKf/EABcRAAMBAAAAAAAAAAAAAAAAAABIhMX/2gAIAQMBAT8BUezZP//EABcRAAMBAAAAAAAAAAAAAAAAAABIhcX/2gAIAQIBAT8BYShgn//EABUQAQEAAAAAAAAAAAAAAAAAAACH/9oACAEBAAY/Ap+//8QAFhAAAwAAAAAAAAAAAAAAAAAAAIHw/9oACAEBAAE/IbZ//9oADAMBAAIAAwAAABAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAgEBPxBf/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxBf/9k=) center no-repeat #15526c;
+    background-image: -webkit-linear-gradient(0deg,#15526c 0,#54abbe 28%,#f99d2e 72%,#d95937 100%);
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(21, 82, 108);
+    height: 15px;
+    background-size: 100% 100%
+}
+.content{
+    padding-bottom:60px;
+    margin:auto;
+    box-sizing:inherit;
+    display:block;
+    color:#444;
+    font-size:14px;
+    min-width:240px;
+    width:100%;
+    height:100%;
+    line-height:1em;
+    font-weight:300;
+}
+#nav1 {
+    height:75px;
+    line-height:75px;
+}
+.form-login{
+    margin-bottom:100px;
+    box-sizing:inherit;
+    display:block;
+    color:#444;
+    font-size:14px;
+    line-height:1em;
+    font-weight:300;
+}
+.remember-me {
+    margin-top: 15px;
+    display: block;
+    margin: 10px 0;
+    box-sizing: inherit;
+    color: #444;
+    font-family: Roboto,sans-serif;
+}
+.fl-r{
+    line-height:20px;
+    float:right;
+}

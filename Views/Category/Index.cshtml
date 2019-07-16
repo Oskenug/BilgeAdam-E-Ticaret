@@ -1,0 +1,52 @@
+﻿@model List<BACommerce.Models.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Adı</th>
+                                    <th>Açıklama</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (BACommerce.Models.Category cat in Model)
+                                {
+                                    <tr>
+                                        <td>@cat.CategoryID</td>
+                                        <td>@cat.CategoryName</td>
+                                        <td>@cat.Description</td>
+                                    
+                                        <td>
+                                           
+                                            <a href='~/Category/Guncelle/@cat.CategoryID' class="btn btn-warning">Güncelle</a>
+                                            <a href='~/Category/Sil/@cat.CategoryID' class="btn btn-danger">Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

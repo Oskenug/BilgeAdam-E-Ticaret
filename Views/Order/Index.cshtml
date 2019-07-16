@@ -1,0 +1,56 @@
+﻿@model List<BACommerce.Models.Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th> Sipariş Edilen Ürün Adı</th>
+                                    <th>Siparişin Stok Miktarı</th>
+                                    <th>Sipariş Edilen Ürünün Fiyatı</th>
+                                    <th>Sipariş Edilen Tarih</th>
+                                   
+                                    
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (BACommerce.Models.Order or in Model)
+                                {
+                                    <tr>
+                                        <td>@or.OrderID</td>
+                                        <td>@or.ProductName</td>
+                                        <td>@or.UnitInStock</td>
+                                        <td>@or.UnitPrice</td>
+                                        <td>@or.OrderDate</td>       
+                                        
+                                        <td>
+                                            
+                                            <a href='~/Order/Sil/@or.OrderID' class="btn btn-danger">Sil</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+﻿@model List<BACommerce.Models.User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<html>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-lg-12">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nick Name</th>
+                                    <th>Şifre</th>
+                                    <th>İsim</th>
+                                    <th>Soy-İsim</th>
+                                    <th>E-mail</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (BACommerce.Models.User us in Model)
+                                {
+                                    <tr>
+                                        <td>@us.UserID</td>
+                                        <td>@us.UserName</td>
+                                        <td>@us.Password</td>
+                                        <td>@us.FirstName</td>
+                                        <td>@us.LastName</td>
+                                        <td>@us.Email</td>
+                                        <td>
+                                          
+                                            <a href='~/User/Guncelle/@us.UserID' class="btn btn-warning">Güncelle</a>
+                                            <a href='~/User/Sil/@us.UserID' class="btn btn-danger">Sil</a>
+                                           
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

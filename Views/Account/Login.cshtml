@@ -1,0 +1,63 @@
+﻿@model BACommerce.Classes.LoginVM
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+
+<body>
+    <div class="span9">
+
+        <h3> Giriş Yap</h3>
+
+        <div class="row">
+            <div class="span4">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "login-form", autocomplete = "off", novalidate = "", @class = "form-container form-login" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="well">
+
+                        <form>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    @Html.TextBoxFor(x => x.Email, new { @placeholder = "E-mail Adresi", @class = "input-lg", @style = "width:100%;display:block;" })
+                                    @Html.ValidationMessageFor(x => x.Email)
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    @Html.PasswordFor(x => x.Password, new { @placeholder = "Parola", @class = "input-lg", @style = "width:100%;display:block;" })
+                                    @Html.ValidationMessageFor(x => x.Password)
+                                </div>
+
+                                @Html.ViewBag.Message
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn">Giriş</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+        
+        </div>
+
+        <style>
+            .field-validation-error {
+                color: red;
+            }
+            
+        </style>
+    </div>
+        
+
+    
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+﻿@model BACommerce.Classes.AdminVM
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Giriş</title>
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/css/admin2.css" rel="stylesheet" />
+</head>
+<body>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />   <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h3 style="color:black; font-weight:100;">Admin Giriş Sistemi </h3><br /><br />
+    <div class="container">
+        <div class="content" style="width:302px;">
+            <div class="form-container form-login form-login-main">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "login-form", autocomplete = "off", novalidate = "", @class = "form-container form-login" }))
+                {
+
+                    @Html.AntiForgeryToken()
+
+                    <div id="login-main">
+                        <div class="form-group form-stack">
+                            <div class="input-group" style="width:380px;" data-validate-container="username">
+                                @Html.TextBoxFor(x => x.AdminName, new { @placeholder = "Admin Name", @class = "input-lg", @style = "width:100%;display:block;" })
+                                @Html.ValidationMessageFor(x => x.AdminName)
+                            </div>
+
+                            <div data-validate-container="password" data-ignore-errors="" class="success">
+                                <div class="input-group" style="width:380px;">
+                                    @Html.PasswordFor(x => x.Password, new { @placeholder = "Parola", @class = "input-lg", @style = "width:100%;display:block;" })
+                                    @Html.ValidationMessageFor(x => x.Password)
+                                    
+                                </div>
+                                @Html.ViewBag.Message
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <button class="btn btn-danger" style="width:380px;" type="submit">Giriş</button>
+                    </div>
+
+
+                }
+            </div>
+            
+
+
+
+        </div>
+    </div>
+    
+    <style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+
+
+
+
+</body>
+</html>
+

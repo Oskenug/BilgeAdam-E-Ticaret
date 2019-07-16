@@ -1,0 +1,59 @@
+﻿body {
+    background-color: palegoldenrod;
+    text-align: center;
+}
+
+#kayit-ol {
+    list-style-type: none;
+    width: 100%;
+}
+
+input[type=text], select {
+    width: 46%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=password], select {
+    width: 46%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 44%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+.dogumtarihi {
+    width: 14.75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+#kaydet-buton {
+    width: 100%;
+    border-radius: 5px;
+    font-weight:bold;
+}

@@ -1,0 +1,52 @@
+﻿@model List<BACommerce.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.bilgi == true)
+            {
+    <div id="gizliAlan" class="alert alert-success alert-dismissable fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Başarılı!</strong> Ekleme İşlemi Gerçekleştirildi.
+    </div>
+}
+else if (ViewBag.bilgi == false)
+{
+    <div id="gizliAlan" class="alert alert-danger alert-dismissable fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Başarısız!</strong> Ekleme İşlemi Gerçekleştirilmedi.
+    </div>
+}
+
+
+
+@foreach (BACommerce.Models.Product item in Model)
+{
+
+
+    <div class="thumbnail">
+        <a href=""><img src="~/img/products/@item.ImagePath" alt="" /></a>
+        <div class="caption">
+            <h5>@item.ProductName</h5>
+            <p>
+                @item.Description
+            </p>
+         
+            <h4 style="text-align:center">
+                <a class="btn" href="@Url.Action("ProductDetails", "Product",new {id=item.ProductID }) ">
+                    <i class="icon-zoom-in"></i>
+                </a> 
+                @if (ViewBag.CurrentUser != null)
+                {
+                <a class="btn" href="@Url.Action("SepeteEkle", "Cart", new { id = item.ProductID }, null)">Ekle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.UnitPrice $</a>
+                }
+                else
+                {
+                    <a class="btn" href="@Url.Action("Login", "Account", new { id = item.ProductID }, null)">Ekle <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.UnitPrice $</a>
+                }
+                <br /><br />
+            </h4>
+        </div>
+    </div>
+
+}

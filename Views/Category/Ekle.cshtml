@@ -1,0 +1,71 @@
+﻿@model BACommerce.Models.Category
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-lg-6 col-lg-offset-3 panel panel-default">
+                <div class="panel-body">
+                    @if (ViewBag.bilgi == true)
+                    {
+                        <div class="alert alert-success">Ekleme İşlemi Başarılı.</div>
+                    }
+                    else if (ViewBag.bilgi == false)
+                    {
+                        <div class="alert alert-danger">Ekleme İşlemi Başarısız.Lütfen Girilen Bilgileri kontrol Ediniz.</div>
+                    }
+
+                    @using (Html.BeginForm("Ekle", "Category", FormMethod.Post))
+                    {
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="text-center">KATEGORİ EKLE</th>
+                                </tr>
+                            </thead>
+                            <tr>
+
+                                <td>Adı(**)</td>
+                                <td>@Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })</td>
+                                <td>@Html.ValidationMessageFor(x => x.CategoryName)</td>
+                            </tr>
+                            <tr>
+                                <td>Açıklama(**)</td>
+                                <td>@Html.TextAreaFor(Model => Model.Description, new { @class = "form-control" })</td>
+                                <td>@Html.ValidationMessageFor(x => x.Description)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="EKLE" class="btn btn-success btn-block" />
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+    <div class="control-group">
+        <div class="controls">
+
+            <label style="color:red;font-size:20px;">(**) olan yerler boş geçilemeyen (*) olan yerler boş geçilebilir alanlardır..</label>
+
+
+        </div></div>
+
+</body>
+</html>
+

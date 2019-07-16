@@ -1,0 +1,57 @@
+﻿@model List<BACommerce.Tools.CartItem>
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+
+                    <div class="col-lg-12">
+                <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ürün İsmi</th>
+                                    <th>Ürün Fiyatı</th>
+                                    <th>Ürün Adet</th>
+                                    <th>Ürün Stok Miktarı</th>
+
+                                </tr>
+                            </thead>
+
+@foreach (BACommerce.Tools.CartItem item in Model)
+{
+
+                         <tbody>
+                              
+                                    <tr>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.UnitPrice</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.UnitsInStock</td>
+                                      
+                                      
+
+                                        <td>
+                                            <a href='~/Cart/SepettenSil/@item.Id' class="btn btn-danger">Sil</a>
+                              
+
+                                        </td>
+                                    </tr>
+
+                           
+                            </tbody>}
+
+                        </table>
+                        <a href='~/Cart/SepetOnayla' class="btn btn-primary"> Sparişi Onayla</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

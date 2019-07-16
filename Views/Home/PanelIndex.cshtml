@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "PanelIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12" style="text-align:center">
+        <br />
+        <br />
+        <br />
+    
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <a href="@Url.Action("Index", "Category")"><img width="300" height="200" style="border-radius:120px;" src="~/img/Kategori-Yonetimi-500x334.jpg" /></a>
+            <div class="text-box">
+
+                <br />
+                <a href="@Url.Action("Ekle", "Category")" class="btn btn-primary center-block">Kategori Ekle</a>
+                <p class="text-muted">Kategorileri görüntülemek  için resime tıklayınız.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <a href="@Url.Action("Index", "Product")"><img width="300" height="200" style="border-radius:120px;" src="~/img/Urun-gelistirme.jpg" /> </a>
+            <div class="text-box">
+
+                <br />
+                <a href="@Url.Action("Ekle", "Product")" class="btn btn-primary center-block">Ürün Ekle</a>
+                <p class="text-muted">Ürünleri görüntülemek için resime tıklayınız.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <a href="@Url.Action("Index", "Order")"> <img width="300" height="200" style="border-radius:120px;" src="~/img/red-basket.jpg" /> </a>
+
+            <div class="text-box">
+
+
+
+                <p class="text-muted">Kullanıcıların onayladıkları sepetteki ürünleri görmek için resme tıklayınız..!.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <a href="@Url.Action("Index", "Admin")"> <img width="300" height="200" style="border-radius:120px;" src="~/img/nickcenter_141374654020.png" /> </a>
+            <div class="text-box">
+
+                <br />
+                <a href="@Url.Action("Ekle", "Admin")" class="btn btn-primary center-block">Admin Ekle</a>
+                <p class="text-muted">Adminleri görüntülemek için resime tıklayınız.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="panel panel-back noti-box">
+            <a href="@Url.Action("Index", "User")"> <img width="300" height="200" style="border-radius:120px;" src="~/img/images.png" /> </a>
+            <div class="text-box">
+
+                <br />
+                <a href="@Url.Action("Ekle", "User")" class="btn btn-primary center-block">Kullanıcı Ekle</a>
+                <p class="text-muted">Kullanıcıları görüntülemek için resime tıklayınız.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,104 @@
+﻿@model BACommerce.Models.Product
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<html>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 panel panel-default" style="margin-top:50px;">
+                <br />
+                @if (ViewBag.bilgi == true)
+            {
+                    <div id="gizliAlan" class="alert alert-success alert-dismissable fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Başarılı!</strong> Ekleme İşlemi Gerçekleştirildi.
+                    </div>
+                }
+                else if (ViewBag.bilgi == false)
+                {
+                    <div id="gizliAlan" class="alert alert-danger alert-dismissable fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Başarısız!</strong> Ekleme İşlemi Gerçekleştirilmedi.
+                    </div>
+                }
+
+                @using (Html.BeginForm("Ekle", "Product", FormMethod.Post))
+                {
+                    <table class="table table-responsive">
+
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="text-center">Ürün Ekle</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Adı(**)</td>
+                                <td>@Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })</td>
+                                <td>@Html.ValidationMessageFor(x => x.ProductName)</td>
+                            </tr>
+                            <tr>
+                                <td>Kategori Seçimi(**)</td>
+                                <td>@Html.DropDownListFor(x => x.CategoryID, (SelectList)ViewBag.CategoryList, new { @class = "form-control" })</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Açıklama(**)</td>
+                                <td>@Html.TextBoxFor(x => x.Description, new { @class = "form-control" })</td>
+                                <td>@Html.ValidationMessageFor(x => x.Description)</td>
+                            </tr>
+                            <tr>
+                                <td>Stok Durumu(*)</td>
+                                <td>@Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control" })</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Fiyatı(*)</td>
+                                <td>@Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Resim b1.jpg default resimdir.(*)</td>
+                                <td>@Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control" })</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                
+                                    <input type="submit" value="EKLE" class="btn btn-success btn-block" />
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                }
+
+            </div>
+        </div>
+    </div>
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+    <div class="control-group">
+        <div class="controls">
+
+            <label style="color:red;font-size:20px;">(**) olan yerler boş geçilemeyen (*) olan yerler boş geçilebilir alanlardır..</label>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+

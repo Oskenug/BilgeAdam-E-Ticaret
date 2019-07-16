@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel</title>
+
+    <link href="~/Content/admincss/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/scripts/Adminjs/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="~/Content/admincss/custom.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+       
+         <div style="color:black;
+padding: 15px 10px 100px 50px;
+float: right;
+font-size: 25px;"><a href="@Url.Action("PanelIndex", "Home")" class="btn btn-primary">Anasayfa</a>&nbsp;&nbsp;<a href="@Url.Action("AdminLogout", "Account")" class="btn btn-danger square-btn-adjust">Çıkış</a></div>
+        
+        
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="~/img/find_user.png" class="user-image img-responsive" />
+                    </li>
+
+                   
+
+                    <li>
+                        <a href="@Url.Action("Index", "Category")"><i class="fa fa-desktop fa-3x"></i> Kategori Güncelle-Sil</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Product")"><i class="fa fa-qrcode fa-3x"></i> Ürün Güncelle-Sil</a>
+                    </li>
+                    
+                    <li>
+                        <a href="@Url.Action("Index", "Order")"><i class="fa fa-qrcode fa-3x"></i> Sipariş Listesi Görüntüle</a>
+                    </li>
+                    
+                    <li>
+                    
+                        <a  href="@Url.Action("Index", "User")"><i class="fa fa-dashboard fa-3x"></i> Kullanıcı Güncelle-Sil</a>
+                    </li>
+
+ 
+                    <li>
+                        <a href="@Url.Action("Index", "Admin")"><i class="fa fa-table fa-3x"></i> Admin Güncelle-Sil</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            @RenderBody()
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+
+    <script src="~/scripts/Adminjs/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+
+    <script src="~/scripts/Adminjs/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+
+    <script src="~/scripts/Adminjs/jquery.metisMenu.js"></script>
+    <!-- MORRIS CHART SCRIPTS -->
+
+    <script src="~/scripts/Adminjs/raphael-2.1.0.min.js"></script>
+
+
+    <script src="~/scripts/Adminjs/morris.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+
+    <script src="~/scripts/Adminjs/custom.js"></script>
+
+</body>
+
+</html>

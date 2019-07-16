@@ -1,0 +1,54 @@
+﻿@model BACommerce.Models.Admin
+@{
+    ViewBag.Title = "Kayit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="span9">
+
+    <div class="well">
+
+        @using (Html.BeginForm("Kayit", "AdminRegister", FormMethod.Post))
+        {   <form class="form-horizontal">
+            <h4>Your personal information</h4>
+            <div class="control-group">
+
+                <div class="controls">
+                    @Html.TextBoxFor(x => x.AdminName, new { type = "text", placeholder = "Kullanıcı Adı" })
+                    @Html.ValidationMessageFor(x => x.AdminName)
+                </div>
+            </div>
+            <div class="control-group">
+
+                <div class="controls">
+                    @Html.PasswordFor(x => x.Password, new { type = "text", placeholder = "E-posta Adı" })
+                    @Html.ValidationMessageFor(x => x.Password)
+                </div>
+            </div>
+            
+                <div class="control-group">
+
+                    <div class="controls">
+                        @Html.TextBoxFor(x => x.Rights, new { type = "text", placeholder = "Yetki >0 verilir." })
+                        @Html.ValidationMessageFor(x => x.Rights)
+                    </div>
+                </div>
+
+            
+            
+            
+            <input type="submit" id="kaydet-buton" value="Kaydet" class="btn btn-success text-center" />
+
+
+        </form>
+        }
+    </div>
+</div>
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+
+
